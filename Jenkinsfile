@@ -54,8 +54,8 @@ pipeline{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
                        sh "docker build -t zomato ."
-                       sh "docker tag zomato jay75chauhan/zomato:latest "
-                       sh "docker push jay75chauhan/zomato:latest "
+                       sh "docker tag zomato anshumaan10/zomato:latest "
+                       sh "docker push anshumaan10/zomato:latest "
                     }
                 }
             }
@@ -69,7 +69,7 @@ pipeline{
             steps{
                 script{
                    withDockerRegistry(credentialsId: 'docker', toolName: 'docker'){
-                       sh 'docker run -d --name zomato -p 3000:3000 jay75chauhan/zomato:latest'
+                       sh 'docker run -d --name zomato -p 3000:3000 anshumaan10/zomato:latest'
                     }
                 }
             }
